@@ -9,7 +9,7 @@ type CashFlowCalculator struct {
 	TimePeriods  []float64
 }
 
-/** Formula for present value (PV) for a future payment is determined by
+/* Formula for present value (PV) for a future payment is determined by
  * PV = FV / (1 + R) ^ N
  * PV is the desired present value
  * FV is the future value that we want to discount

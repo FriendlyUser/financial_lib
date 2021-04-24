@@ -7,7 +7,7 @@ type CompoundRateCalculator struct {
 	Rate float64
 }
 
-/**
+/*
  * Formula for discrete	compound interest is
  * V = P(1+R)^N
  * where P is the present value
@@ -18,7 +18,7 @@ func (r *CompoundRateCalculator) MultiplePeriod(value float64, numPeriods float6
 	return value * math.Pow(1+r.Rate, numPeriods)
 }
 
-/**
+/*
  * The formula for the calculation of continuous interest rate compounding is
  * V = Pe^(RN)
  * V is desired future value
