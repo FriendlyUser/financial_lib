@@ -1,5 +1,6 @@
 package interest
 
+// struct for calculating simple rates
 type InterestRateCalculator struct {
 	Rate float64
 }
