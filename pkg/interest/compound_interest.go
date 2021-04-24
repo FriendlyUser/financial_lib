@@ -3,7 +3,7 @@ package interest
 import "math"
 
 type CompoundRateCalculator struct {
-	rate float64
+	Rate float64
 }
 
 // Formula for discrete	compound interest is
@@ -12,9 +12,8 @@ type CompoundRateCalculator struct {
 // R is the rate
 // N is the number of periods
 func (r *CompoundRateCalculator) MultiplePeriod(value float64, numPeriods float64) float64 {
-	return value * math.Pow(1 + r.rate, numPeriods)
+	return value * math.Pow(1+r.Rate, numPeriods)
 }
-
 
 // The formula for the calculation of continuous interest rate compounding is
 // V = Pe^(RN)
@@ -23,5 +22,5 @@ func (r *CompoundRateCalculator) MultiplePeriod(value float64, numPeriods float6
 // R is the interest rate during this period
 // N is the number of periods
 func (r *CompoundRateCalculator) ContinuousCompounding(value float64, numPeriods float64) float64 {
-	return value * math.Exp(r.rate * numPeriods)
+	return value * math.Exp(r.Rate*numPeriods)
 }
