@@ -32,6 +32,6 @@ func (cfc *CashFlowCalculator) PresentValue() float64 {
 
 // Adds cash payment
 func (cfc *CashFlowCalculator) AddCashPayment(value float64, timePeriod float64) {
-	cfc.cashPayments = append(cfc.cashPayments, value)
-	cfc.timePeriods = append(cfc.timePeriods, timePeriod)
+	cfc.CashPayments = append(cfc.CashPayments, value)
+	cfc.TimePeriods = append(cfc.TimePeriods, timePeriod)
 }
