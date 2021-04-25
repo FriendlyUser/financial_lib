@@ -1,6 +1,9 @@
 package interest
 
-import "math"
+import (
+	"fmt"
+	"math"
+)
 
 // struct for calculating compound rates
 type CompoundRateCalculator struct {
@@ -36,4 +39,10 @@ func (r *CompoundRateCalculator) MultiplePeriod(value float64, numPeriods float6
 //
 func (r *CompoundRateCalculator) ContinuousCompounding(value float64, numPeriods float64) float64 {
 	return value * math.Exp(r.Rate*numPeriods)
+}
+
+func ExampleCompoundRateCalculator_ContinuousCompounding() {
+	p := CompoundRateCalculator{Rate: 1}
+	value := p.ContinuousCompounding(0.5, 2)
+	fmt.Printf("Result is %f", value)
 }

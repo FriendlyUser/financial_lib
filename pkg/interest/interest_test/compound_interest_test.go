@@ -10,17 +10,17 @@ import (
 
 func TestMultiplePeriod(t *testing.T) {
 	p := interest.CompoundRateCalculator{Rate: 1}
-	value := p.MultiplePeriod(2, 5)
-	if value != 64 {
-		t.Fatal("Expected value to equal 64")
+	value := p.MultiplePeriod(80, 5)
+	if value != 2560.0 {
+		t.Fatal("Expected value to equal 2560")
 	}
 }
 
 func TestContinuousCompounding(t *testing.T) {
 	p := interest.CompoundRateCalculator{Rate: 1}
 	value := p.ContinuousCompounding(0.5, 2)
-	if math.Round(value) != 11 {
-		t.Fatal("Expected value to equal 2560")
+	if math.Round(value) != 4 {
+		t.Fatal("Expected value to equal 4")
 	}
 }
 
