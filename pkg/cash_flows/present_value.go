@@ -1,7 +1,6 @@
 package cash_flows
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -41,11 +40,4 @@ func (cfc *CashFlowCalculator) PresentValue() float64 {
 func (cfc *CashFlowCalculator) AddCashPayment(value float64, timePeriod float64) {
 	cfc.CashPayments = append(cfc.CashPayments, value)
 	cfc.TimePeriods = append(cfc.TimePeriods, timePeriod)
-}
-
-// example for cash flow
-func ExampleCashFlowCalculator_CalcPresentValue() {
-	cf := CashFlowCalculator{Rate: 0.25}
-	value := cf.CalcPresentValue(5, 2)
-	fmt.Println(value)
 }
