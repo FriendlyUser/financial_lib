@@ -1,7 +1,6 @@
 package interest
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -39,11 +38,4 @@ func (r *CompoundRateCalculator) MultiplePeriod(value float64, numPeriods float6
 //
 func (r *CompoundRateCalculator) ContinuousCompounding(value float64, numPeriods float64) float64 {
 	return value * math.Exp(r.Rate*numPeriods)
-}
-
-// compound rate calculator
-func ExampleCompoundRateCalculator_ContinuousCompounding() {
-	p := CompoundRateCalculator{Rate: 1}
-	value := p.ContinuousCompounding(0.5, 2)
-	fmt.Printf("Result is %f", value)
 }
