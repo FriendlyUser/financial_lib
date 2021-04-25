@@ -41,6 +41,7 @@ func (r *CompoundRateCalculator) ContinuousCompounding(value float64, numPeriods
 	return value * math.Exp(r.Rate*numPeriods)
 }
 
+// compound rate calculator
 func ExampleCompoundRateCalculator_ContinuousCompounding() {
 	p := CompoundRateCalculator{Rate: 1}
 	value := p.ContinuousCompounding(0.5, 2)

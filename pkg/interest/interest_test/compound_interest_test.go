@@ -31,6 +31,7 @@ func ExampleCompoundRateCalculator_ContinuousCompounding() {
 	fmt.Printf("Result is %f", value)
 }
 
+// example code please do something
 func ExampleCompoundRateCalculator_MultiplePeriod() {
 	p := interest.CompoundRateCalculator{Rate: 1}
 	value := p.MultiplePeriod(0.5, 2)
