@@ -1,4 +1,4 @@
-package interest
+package equities
 
 // struct for calculating compound rates
 type MACalculator struct {
@@ -10,10 +10,11 @@ func (ma *MACalculator) CalculateMA() []float64 {
 	var ma_values []float64
 	sum := 0.0
 	for i := range ma.mPrices {
-		sum += ma.mPrices[i]
+		sum = sum + ma.mPrices[i]
 		if i > ma.MNumPeriod {
 			temp := sum / float64(ma.MNumPeriod)
 			ma_values = append(ma_values, temp)
+			sum = sum - ma.mPrices[i-ma.MNumPeriod]
 		}
 	}
 	return ma_values
